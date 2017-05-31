@@ -4,18 +4,33 @@
 Lengstorf <jason.lengstorf@copterlabs.com> * @copyright 2010 Copter Labs * @license http://www.opensource.org/licenses/mit-license.html MIT License */ 
   class Template { 
   
- //TODO: Define a class property to store the template 
+ //TODO: Define a class property to store the template
+ public $temp; 
   
  //TODO: Define a class property to store the entries 
+ public $entries;
   
  //TODO: Write a public method to output the result of the templating engine 
+ public function output_result() {
+
+ }
   
  //TODO: Write a private method to load the template 
+ private function load_template() {
+
+ }
   
  //TODO: Write a private method to parse the template 
+ private function parse_template() {
+
+ }
   
  //TODO: Write a static method to replace the template tags with entry data 
+ public static function replace_temp_tags() {
+
+ }
   
  //TODO: Write a private currying function to facilitate tag replacement 
   
 }
+?>
