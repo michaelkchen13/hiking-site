@@ -1,5 +1,5 @@
 <?php 
-  
+//note: taken from https://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596
 /** * A templating engine * * PHP version 5 * * LICENSE: This source file is subject to the MIT License, available at * http://www.opensource.org/licenses/mit-license.html * * @author Jason 
 Lengstorf <jason.lengstorf@copterlabs.com> * @copyright 2010 Copter Labs * @license http://www.opensource.org/licenses/mit-license.html MIT License */ 
   class Template { 
