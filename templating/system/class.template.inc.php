@@ -3,12 +3,12 @@
 /** * A templating engine * * PHP version 5 * * LICENSE: This source file is subject to the MIT License, available at * http://www.opensource.org/licenses/mit-license.html * * @author Jason 
 Lengstorf <jason.lengstorf@copterlabs.com> * @copyright 2010 Copter Labs * @license http://www.opensource.org/licenses/mit-license.html MIT License */ 
   class Template { 
+
+ /** * Stores the entries to be parsed in the template * @var array */ 
+ public $entries = array();
   
  //TODO: Define a class property to store the template
  public $temp; 
-  
- //TODO: Define a class property to store the entries 
- public $entries;
   
  //TODO: Write a public method to output the result of the templating engine 
  public function output_result() {
