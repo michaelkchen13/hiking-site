@@ -1,0 +1,27 @@
+Hello, {{ name }}! You are {{ age }} years old.<br /><br />
+
+{ if age > 15 }
+     You are over the age of 15!<br /><br />
+{ endif }
+
+{ for user in users }
+    {{ user.name }} is {{ user.age }} years old.<br /><br />
+{ endfor }
+
+{{ 'hello'  | md5 }} <br /><br />
+
+{ for i in range(0, 3 ) }
+  {{ i }} <!-- could use this for blog posts ; but how to use this for multiple pages!-->
+{ endfor} <br /><br />
+
+{ filter upper }
+    This text becomes uppercase
+{ endfilter } <br /><br />
+
+{ set name = 'the adventures of huckleberry finn' }
+{{ name|striptags|title }} <br /><br />
+
+{ set list = [1,2,4,8] }
+{{ list|join(': ') }}
+
+<!--sample stuff for Twig syntax }}
