@@ -1,6 +1,7 @@
 <!--VIDEO FEAT-->
 <script>
  // Geocharts begin here...
+ // don't repeat code!
       google.charts.load('current', {'packages': ['geochart']});
       google.charts.setOnLoadCallback(drawMarkersMap);
 
@@ -30,9 +31,9 @@
 
 
     //regional map of NE begins here...
-    var map;
+    var map1;
      function initMap() {
-        map = new google.maps.Map(document.getElementById('map_section_div'), {
+        map1 = new google.maps.Map(document.getElementById('map_section_NE'), {
           zoom: 6, //defualt zoom for view of the northeast
           center: {lat: 44.5588, lng: -72.5778},
           mapTypeId: 'terrain'
@@ -45,12 +46,52 @@
         script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-        map.data.setStyle(function(feature) {
+        map1.data.setStyle(function(feature) {
           var magnitude = feature.getProperty('mag');
           return {
             icon: getCircle(magnitude)
           };
         });
+
+        map2 = new google.maps.Map(document.getElementById('map_section_SE'), {
+          zoom: 6, //defualt zoom for view of the northeast
+          center: {lat: 34.5588, lng: -82.5778},
+          mapTypeId: 'terrain'
+        });
+
+        var script2 = document.createElement('script');
+
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script2.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        map2.data.setStyle(function(feature) {
+          var magnitude = feature.getProperty('mag');
+          return {
+            icon: getCircle(magnitude)
+          };
+        });
+
+        // Define the LatLng coordinates for the polygon's path.
+        var triangleCoords = [
+          {lat: 33.321, lng: -74.757},
+          {lat: 25.774, lng: -80.190},
+          {lat: 35.544, lng: -90.190},
+          {lat: 35.544, lng: -90.190},
+          {lat: 33.321, lng: -74.757}
+        ];
+
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        bermudaTriangle.setMap(map2);
       }
 
       function getCircle(magnitude) {
@@ -80,9 +121,21 @@
             </div> <!-- container -->
         </section><!-- featurette -->
 
+        <break />
+        <break />
+
         <section id="featurette">
             <div class="container">
-                <div id="map_section_div" style="width: 900px; height: 500px;"></div>
+                <div id="map_section_NE" style="width: 900px; height: 500px;"></div>
+            </div> <!-- container -->
+        </section><!-- featurette -->
+
+        <break />
+        <break />
+
+        <section id="featurette">
+            <div class="container">
+                <div id="map_section_SE" style="width: 900px; height: 500px;"></div>
             </div> <!-- container -->
         </section><!-- featurette -->
     </div>
