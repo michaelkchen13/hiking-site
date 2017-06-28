@@ -59,6 +59,30 @@
           };
         }); 
 
+        // Define the LatLng coordinates for the northeast region's path.
+        var northEast = [
+          {lat: 39.321, lng: -76.757},
+          {lat: 42.909, lng: -79.000},
+          {lat: 44.234, lng: -75.555},
+          {lat: 47.244, lng: -66.455},
+          {lat: 45.234, lng: -66.555},
+          {lat: 41.100, lng: -70.000},
+          {lat: 40.000, lng: -74.000},
+          {lat: 38.500, lng: -75.000},
+          {lat: 39.321, lng: -76.757}
+        ];
+
+        // Construct the region
+        var northEastPolygon = new google.maps.Polygon({
+          paths: northEast,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        northEastPolygon.setMap(map1);
+
         map1.addListener('click', function (event) {
               displayCoordinates(event.latLng);               
           });
@@ -86,7 +110,7 @@
           };
         });
 
-        // Define the LatLng coordinates for the polygon's path.
+        // Define the LatLng coordinates for the southeast region's path.
         var southEast = [
           {lat: 38.321, lng: -76.757},
           {lat: 35.321, lng: -75.757},
@@ -132,6 +156,29 @@
             icon: getCircle(magnitude)
           };
         }); 
+
+        var southWest = [
+          {lat: 36.321, lng: -93.000},
+          {lat: 25.909, lng: -93.000},
+          {lat: 32.909, lng: -119.000},
+          {lat: 36.321, lng: -119.000},
+          {lat: 36.321, lng: -93.000}
+        ];
+
+        // Construct the region
+        var southWestPolygon = new google.maps.Polygon({
+          paths: southWest,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        southWestPolygon.setMap(map3);
+
+        map3.addListener('click', function (event) {
+              displayCoordinates(event.latLng);               
+          });
     }
 
     //regional map of northwest begins here
@@ -198,41 +245,17 @@
 
     </div>
 
+    {% for item in map_info %}
+      <div id="page-content-wrapper">
+        <section id="featurette">
+            <div class="container">
+                <div id="{{ item.id }}" style="width: 900px; height: 500px; display: none;"></div>
+            </div> <!-- container -->
+        </section><!-- featurette -->
+     </div>
+    {% endfor %}
+
         <break />
         <break />
 
-    <div id="page-content-wrapper">
-        <section id="featurette">
-            <div class="container">
-                <div id="map_section_NE" style="width: 900px; height: 500px; display: none;"></div>
-            </div> <!-- container -->
-        </section><!-- featurette -->
-    </div>
-
-        <break />
-        <break />
-
-    <div id="page-content-wrapper">
-        <section id="featurette">
-            <div class="container">
-                <div id="map_section_SE" style="width: 900px; height: 500px; display: none;"></div>
-            </div> <!-- container -->
-        </section><!-- featurette -->
-    </div>
-
-    <div id="page-content-wrapper">
-        <section id="featurette">
-            <div class="container">
-                <div id="map_section_SW" style="width: 900px; height: 500px; display: none;"></div>
-            </div> <!-- container -->
-        </section><!-- featurette -->
-    </div>
-
-    <div id="page-content-wrapper">
-        <section id="featurette">
-            <div class="container">
-                <div id="map_section_NW" style="width: 900px; height: 500px; display: none;"></div>
-            </div> <!-- container -->
-        </section><!-- featurette -->
-    </div>
 </div><!--  wrapper !-->

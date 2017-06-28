@@ -40,6 +40,12 @@ echo $twig->render('main.html', array(
             array('name' => 'Max', 'age' => 18),
             array('name' => 'James', 'age' => 22),
             array('name' => 'Max', 'age' => 34)
+            ),
+        'map_info' => array(
+            array('id' => 'map_section_NE'),
+            array('id' => 'map_section_SE'),
+            array('id' => 'map_section_SW'),
+            array('id' => 'map_section_NW')
             )
     )); 
 
