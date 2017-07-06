@@ -1,7 +1,7 @@
 <!--VIDEO FEAT-->
 <script>
  // Geocharts begin here...
- // don't repeat code
+ // figure out how to make it less repetitive
       google.charts.load('current', {'packages': ['geochart']});
       google.charts.setOnLoadCallback(drawMarkersMap);
 
@@ -64,7 +64,7 @@
           {lat: 39.321, lng: -76.757},
           {lat: 42.909, lng: -79.000},
           {lat: 44.234, lng: -75.555},
-          {lat: 47.244, lng: -66.455},
+          {lat: 47.244, lng: -69.455},
           {lat: 45.234, lng: -66.555},
           {lat: 41.100, lng: -70.000},
           {lat: 40.000, lng: -74.000},
@@ -185,7 +185,7 @@
       function initMap4() { 
         map4 = new google.maps.Map(document.getElementById('map_section_NW'), {
           zoom: 5, //defualt zoom for view of the northeast
-          center: {lat: 43.5588, lng: -102.5778},
+          center: {lat: 43.5588, lng: -107.5778},
           mapTypeId: 'terrain'
         });
 
@@ -202,6 +202,27 @@
             icon: getCircle(magnitude)
           };
         }); 
+
+        var northWest = [
+          {lat: 49.321, lng: -98.000},
+          {lat: 38.909, lng: -98.000},
+          {lat: 41.909, lng: -125.000},
+          {lat: 45.909, lng: -125.000},
+          {lat: 49.321, lng: -125.000},
+          {lat: 49.321, lng: -98.000}
+        ];
+
+        // Construct the region
+        var northWestPolygon = new google.maps.Polygon({
+          paths: northWest,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        northWestPolygon.setMap(map4);
+
     }
 
       function getCircle(magnitude) {
