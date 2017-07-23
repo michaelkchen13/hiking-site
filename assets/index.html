@@ -13,6 +13,9 @@
 		<!-- Bootstrap Core CSS-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
+		<!-- Bootstrap-select dropdown menus CSS -->
+		<link href="css/bootstrap-select.min.css" rel="stylesheet">
+
 		<!-- FontAwesome Icons-->
 		<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -21,6 +24,64 @@
 
 		<!--Google Fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+
+		<script>
+      var map;
+      function initMap() {
+        var mttammany = {lat: 40.9680, lng: -75.1131}
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 37.092, lng: -93.5},
+          zoom: 4
+        });
+        var elevator = new google.maps.ElevationService;
+        var infowindow = new google.maps.InfoWindow({map: map});
+
+        // Add a listener for the click event. Display the elevation for the LatLng of
+        // the click inside the infowindow.
+        map.addListener('click', function(event) {
+          displayLocationElevation(event.latLng, elevator, infowindow);
+        });
+
+        //add markers
+        var marker = new google.maps.Marker({
+          position: mttammany,
+          map: map
+        })
+
+        //create content for the infobbox
+        var contentString = '<div id="content">'+
+        '<div id ="siteNotice">' +
+        '<div>' +
+        '<h1 id="firstheading" class="firstHeading">MT. Tammany</h1>'+
+        '<div id="bodycontent">'+
+        '<p> '
+      }
+
+      function displayLocationElevation(location, elevator, infowindow) {
+        // Initiate the location request
+        elevator.getElevationForLocations({
+          'locations': [location]
+        }, function(results, status) {
+          infowindow.setPosition(location);
+          if (status === 'OK') {
+            // Retrieve the first result
+            if (results[0]) {
+              // Open the infowindow indicating the elevation at the clicked position.
+              infowindow.setContent('The elevation at this point <br>is ' +
+                  results[0].elevation + ' meters.');
+            } else {
+              infowindow.setContent('No results found');
+            }
+          } else {
+            infowindow.setContent('Elevation service failed due to: ' + status);
+          }
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPMxB9ObhrhpWVwsjITUtBCFvI91YwDQg&callback=initMap"
+    async defer></script>
 
 	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -36,6 +97,7 @@
 		<header class="site-header" role="banner">
 
 		<!-- NAVBAR-->
+
 		<div class="navbar-wrapper">
 
 			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -48,137 +110,113 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-						<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Bootstrap to WordPress"></a>
+                        <a href="#menu-toggle" class="btn btn-default, fa fa-bars fa-2x" aria-hidden="true" id="menu-toggle"></a>
 					</div><!-- navbar-header -->
+					<div class="logo">
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Hiking Site"></a>
+					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="resources.html">Resources</a></li>
-							<li><a href="login.html">Login</a></li>
+						<div class="col-sm-12 btn-position">
+						<button class="btn btn-success btn-sm btn-block" data-toggle="modal" data-target="#myModal">
+							Login
+						</button>
+						</div>
 						</ul>
+					</div>
 				</div><!-- container -->
 			</div><!-- navbar -->
 		</div><!-- navbar-wrapper-->		
 
 		</header>
 
-
-
-
-
 		<!--Sidebar-->
 		<div id="wrapper">
 			<div id="sidebar-wrapper">
+
 				<ul class="sidebar-nav">
 					<li class="sidebar-brand">
-						<a href="#"></a>
+						<a href="index.html">Hiking Site</a>
 					</li>
 					<li>
-						<a href="#">Plan Trip</a>
+						<a href="plantrip.html">Plan Trip</a>
 					</li>
 					<li>
-						<a href="#">History</a>
+						<a href="history.html">History</a>
 					</li>
 					<li>
-						<a href="#">Hiking Advice</a>
+						<a href="hikingadvice.html">Hiking Advice</a>
 					</li>
 					<li>
-						<a href="#">Create Profile</a>
+						<a href="blog.html">Blog</a>
 					</li>
 					<li>
-						<a href="#">Blog</a>
+						<a href="createaccount.html">Create Account</a>
 					</li>
 				</ul>
 			</div><!-- sidebar-wrapper -->
-
-
-
-
-
-
-
-
 	<div id="page-content-wrapper">
 
-		<!-- OPT IN SECTION-->
-		<section id="optin">
-			<div class="container">
-				<div class="row">
 
-					<div class="col-sm-8">
-						<p class="lead"><strong>Create an account</strong></p>
-					</div><!-- col -->
-
-					<div class="col-sm-4">
-						<button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-							Click Here To Login
-						</button>
-					</div><!-- col -->
-
-				</div><!-- row -->
-			</div><!-- container -->
-		</section><!-- optin -->
+		<div class="container">
+			<div class="row regions">
+				<div class="col-sm-offset-3 col-sm-2">
+					<select class="selectpicker" multiple>
+						<option>North</option>
+						<option>East</option>
+						<option>South</option>
+						<option>West</option>
+					</select>
+				</div>
+				<div class="col-sm-offset-2 col-sm-3">
+					<select class="selectpicker" multiple>
+						<option value="north">North</option>
+						<option value="east">East</option>
+						<option value="south">South</option>
+						<option value="west">West</option>
+					</select>
+				</div>
+			</div>
+		</div>
 
 
 		<!--VIDEO FEAT-->
 		<section id="featurette">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2">
-						<h2>MAP</h2>
-						<iframe width="100%" height="415" src="https://www.youtube.com/embed/XMP3NhsZhhE" frameborder="0" allowfullscreen></iframe>
+					<div class="col-sm-12">
+						<h2>Hiking Locations Map</h2>
+						<div id='map' style="position: initial !important; overflow: scroll !important; height: 100%; width: 100%;">maps error</div>
+						<iframe
+  							width="100%"
+  							height="600px"
+  							frameborder="0" style="border:0"
+  							src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAy00pNj59r-_tNWHbCICLEbtYwyyP4gO4&q=record+stores+in+Seattle" allowfullscreen>
+						</iframe>
 					</div><!-- end col -->
 				</div><!-- row -->
 			</div> <!-- container -->
 		</section><!-- featurette -->
 
+		
 
 
-		<!-- PROJECT FEAT-->
-		<section id="project-features">
-			<div class="container">
-				
-				<h2>Final Project Features</h2>
-				<p class="lead">Throughout this entire course, you work towards building an incredibly beautiful website. Want to see the website <strong>you</strong> are going to build? <em>You're looking at it!</em> The website you're using right now is the website you will have built entirely by yourself, by the end of this course</p>
-
-				<div class="row">
-					<div class="col-sm-4">
-						<img src="img/icon-design.png" alt="Design">
-						<h3>Sexy &amp; Modern Design</h3>
-						<p> You get to work with a modern, professional quality design &amp; layout.</p>
-					</div><!-- end col -->
-					<div class="col-sm-4">
-						<img src="img/icon-code.png" alt="Design">
-						<h3>Quality HTML5 &amp; CSS3</h3>
-						<p> You'll learn how to hand-craft a stunning website with valid, semantic and beautiful HTML5 &amp; CSS3.</p>
-					</div><!-- end col -->
-					<div class="col-sm-4">
-						<img src="img/icon-design.png" alt="Design">
-						<h3>Easy to use CMS</h3>
-						<p> Allow your clients to easily update their websites by converting your static websites to dynamic websites, using wordpress.</p>
-					</div><!-- end col -->
-				</div><!-- row -->
-
-			</div><!-- container -->
-		</section><!-- project-features -->
 
 
 		<!-- FOOTER-->
 		<footer>
 			<div class="container">
 				<div class="col-sm-3">
-					<p><a href="/"><img src="img/logo.png" alt="Bootstrap to WordPress"></a></p>
+					<p><a href="/"><img src="img/logo.png" alt="Hiking Website"></a></p>
 				</div><!-- end col -->
 				<div class="col-sm-6">
 					<nav>
 						<ul class="list-unstyled list-inline">					
-							<li><a href="index.html">Home</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="resources.html">Resources</a></li>
-							<li><a href="login.html">Login</a></li>
-							<li class="signup-link"><a href="">Sign up now</a></li>
+							<li><a href="plantrip.html">Plan Trip</a></li>
+							<li><a href="blog.html">History</a></li>
+							<li><a href="hikingadvice.html">Hiking Advice</a></li>
+							<li><a href="blog.html">Blog</a></li>							
+							<li class="signup-link"><a href="createaccount.html">Create Account</a></li>
 						</ul>
 					</nav>
 				</div><!-- end col -->
@@ -204,20 +242,20 @@
 
 						<form class="form-inline" role="form">
 							<div class="form-group">
-								<label class="sr-only" for="subscribe-name">Email</label>
-								<input type="text" class="form-control" id="subscribe-name" placeholder="Email">
+								<label class="sr-only" for="login-name">Email</label>
+								<input type="text" class="form-control" id="login-name" placeholder="Email">
 							</div><!-- form-group -->
 							<div class="form-group">
-								<label class="sr-only" for="subscribe-email">Password</label>
-								<input type="text" class="form-control" id="subscribe-email" placeholder="Password">
+								<label class="sr-only" for="login-email">Password</label>
+								<input type="text" class="form-control" id="login-email" placeholder="Password">
 							</div><!-- form-group -->
 
-							<input type="submit" class="btn btn-danger" value="Subscribe!">
+							<input type="submit" class="btn btn-danger" value="Login">
 						</form>
 
 						<hr>
 
-						<p><small>Provide your email</small></p>
+						<p><small>Provide your email and password</small></p>
 					</div><!-- modal body -->
 
 				</div><!-- modal content -->
@@ -231,10 +269,12 @@
 		<!-- BOOTSTRAP CORE JAVASCRIPT
 			 PLaced at the end of the document so the pages load faster!
 		-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="js/jquery-3.2.1.min.js"></script>
     	<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
+
+		<!-- Bootstrap-select(dropdown menus JS) -->
+		<script src="js/bootstrap-select.min.js"></script>
 
 		<script>
 		$("#menu-toggle").click(function(e) {

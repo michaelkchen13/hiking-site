@@ -13,10 +13,16 @@ Blue Gray: #3e4249;
 body{
 	margin-top: 50px;
 	font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
-	fot-size: 16px;
+	font-size: 16px;
 	background: url('../img/tile.jpg') top left repeat;
     overflow-x: hidden;
 }
+/*
+background-color: #2e2800;
+background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+*/
+
+
 
 /* === GLOBAL === */
 
@@ -69,6 +75,11 @@ button, input, .btn, a.btn {
 	font-weight: bold;
 }
 
+.btn-position {
+	padding-top: 12px;
+	padding-right: 100px;
+}
+
 button.btn:focus {
 	outline: none !important;
 }
@@ -93,7 +104,7 @@ img {
 }
 
 .modal-content {
-	background: url('../img/tile.jpg');
+	background: #ffffff
 }
 
 .badge.social {
@@ -138,6 +149,16 @@ blockquote cite {
 
 blockquote:before {
 	display: none;
+}
+
+
+/* === Dropdown Menus === */
+.btn-group>.btn:first-child {
+	margin-left: -20px !important;
+}
+
+.dropdown-menu {
+	margin: 2px -20px 0px;
 }
 
 /* === HERO === */
@@ -224,6 +245,10 @@ blockquote:before {
     padding-left: 250px;
 }
 
+.navbar-brand {
+	text-align: center;
+}
+
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -246,12 +271,15 @@ blockquote:before {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
+}
+
+.fa-bars:hover {
+	background-color: #0000ff;
 }
 
 /* Sidebar Styles */
@@ -302,6 +330,18 @@ blockquote:before {
     background: none;
 }
 
+.logo {
+	float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+
+.logo > .navbar-brand {
+	position: relative;
+  	left: 63%;
+}
 
 
 
@@ -323,6 +363,10 @@ section.main-content {
 	text-align: center;
 }
 
+.regions {
+	margin-top: 50px;
+}
+
 section h2 {
 	margin: 20px 0 40px;
 }
@@ -333,7 +377,7 @@ section h3 {
 
 #primary {
 	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-bottom: 80px;
 }
 
 .feature-image {
@@ -341,8 +385,13 @@ section h3 {
 	width: 100%;
 }
 
+.createaccount_picture
+{
+	padding-bottom: 250px;
+}
+
 .feature-image-default {
-	background: url('../img/stuff-feature.jpg') no-repeat;
+	background: url('../img/createaccount_hiker.jpg') no-repeat;
 	background-size: cover;
 }
 
@@ -389,7 +438,7 @@ section h3 {
 /*	background: url('../img/stuff-bg.jpg') 50% 100% repeat fixed;*/
 	background-size: cover;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 /*
@@ -468,6 +517,8 @@ footer {
 	color: white;
 	padding: 20px 0 10px;
 	font-size: 12px;
+	margin-left: -20px;
+	margin-right: -20px;
 }
 
 footer p {
@@ -785,13 +836,21 @@ button[type="submit"]:hover {
     }
 
     #page-content-wrapper {
-        padding: 20px;
         position: relative;
     }
 
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+
+    .navbar-right {
+    	margin-right: -250px !important;
+    }
+
+    .container > .navbar-header {
+    	margin-left: -50px;
+    	margin-right: 0px;
     }
 }
 
