@@ -4,16 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Hiking Sites</title>
 
-    <!-- Bootstrap -->
-    <!-- Bootstrap Core CSS-->
-    <!--link href="views/assets/css/custom.css" rel="stylesheet"-->
-    <link href="views/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS StyleSheet -->
+        <link href="views/assets/css/custom.css" rel="stylesheet">
 
-        <!-- FontAwesome Icons-->
-    <link href="views/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS-->
+        <link href="views/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons-->
+        <link href="views/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,9 +25,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+
+
   </head>
   <body>
-    <h1>{{name}}</h1>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -32,10 +36,18 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    {{ include('header.html') }}
-    {{ include('sidebar.html') }}
+
+    {{ include('header.html') }} 
+    {{ include('sidebar.html') }} 
+    <!-- <h1>{{name}}</h1> -->
+<div id="page-content-wrapper">
+    <div id= "ipad_background">
+
     {{ include('main-content.html') }}
-    {{ include('footer.html') }}
-    
+
+    </div><!-- ipad background -->
+</div><!-- page-content-wrapper -->
+    {{ include('modal.html') }}
+    {{ include('footer.html') }}    
   </body>
 </html>

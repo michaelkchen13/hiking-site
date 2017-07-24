@@ -70,7 +70,7 @@ if ($page === 'login'){
 } else if ($page === 'blog') {
     echo $twig->render('blog.html');
 } else if($page === 'create_account') {
-    echo $twig->render('form.html');
+    echo $twig->render('createaccount.html');
 } else if($page === 'loc-info') {
     echo $twig->render('location-info.html', array(
         'default-location' => 'Appalachain Trail'

@@ -9,14 +9,33 @@ Blue Gray: #3e4249;
 /*
 
 /* === GENERAL === */
+ 
+.navbar-inverse {
+	background-color: #080808 !important;
+}
 
 body{
 	margin-top: 50px;
 	font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
 	font-size: 16px;
-	background: url('../img/tile.jpg') top left repeat;
+	background: url('../img/.jpg') no-repeat center center;
     overflow-x: hidden;
+    background-size: cover;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
+
+#ipad_background{
+	background: url('../img/wood3.jpg') no-repeat center center;
+    overflow-x: hidden;
+    background-size: cover;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+
 /*
 background-color: #2e2800;
 background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
@@ -54,15 +73,6 @@ p {
 
 p.lead {
 	font-weight: normal;
-}
-
-a:link, a:visited {
-	color: #dd5638;
-}
-
-a:hover {
-	text-decoration: none;
-	color: #c9302c;
 }
 
 button, input, .btn, a.btn {
@@ -106,6 +116,23 @@ img {
 .modal-content {
 	background: #ffffff
 }
+
+body.modal-open {
+    overflow: auto;
+}
+body.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+.modal::-webkit-scrollbar {
+    width: 0 !important; /*removes the scrollbar but still scrollable*/
+    /* reference: http://stackoverflow.com/a/26500272/2259400 */
+}
+.modal::-moz-scrollbar {
+    width: 0 !important; /*removes the scrollbar but still scrollable*/
+    /* reference: http://stackoverflow.com/a/26500272/2259400 */
+}
+
 
 .badge.social {
 	background: #ccc;
@@ -160,6 +187,28 @@ blockquote:before {
 .dropdown-menu {
 	margin: 2px -20px 0px;
 }
+
+.open>.dropdown-menu {
+    display: block;
+    margin-left: 43%;
+    text-align: center;
+}
+
+#map_dropdown {
+	text-align: center;
+	padding-top: 200px;
+}
+
+#region_button {
+	width: 20%;
+}
+
+
+/* === Maps === */
+.map {
+    margin: 50px 0 220px 130px;
+}
+
 
 /* === HERO === */
 
@@ -279,7 +328,11 @@ blockquote:before {
 }
 
 .fa-bars:hover {
-	background-color: #0000ff;
+	background-color: #ffffff;
+}
+
+.fa-2x {
+	font-size: 2em !important;
 }
 
 /* Sidebar Styles */
@@ -391,8 +444,9 @@ section h3 {
 }
 
 .feature-image-default {
-	background: url('../img/createaccount_hiker.jpg') no-repeat;
+	background: url("../img/createaccount_hiker.jpg") no-repeat;
 	background-size: cover;
+	height: 300px;
 }
 
 .feature-image-default-alt {
@@ -436,9 +490,7 @@ section h3 {
 
 #featurette{
 /*	background: url('../img/stuff-bg.jpg') 50% 100% repeat fixed;*/
-	background-size: cover;
 	text-align: center;
-	color: black;
 }
 
 /*
