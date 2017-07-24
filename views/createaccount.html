@@ -8,17 +8,17 @@
     <title>Hiking Sites</title>
 
     <!-- Custom CSS StyleSheet -->
-        <link href="assets/css/custom.css" rel="stylesheet">
+        <link href="views/assets/css/custom.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <!-- Bootstrap Core CSS-->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="views/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap-select dropdown menus CSS -->
-        <link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
+        <link href="views/assets/css/bootstrap-select.min.css" rel="stylesheet">
 
     <!-- FontAwesome Icons-->
-        <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="views/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,20 +56,32 @@
                     <p class="lead">Create your Hiking Locations account!</p>
                 </section><!-- main-content -->
 
-                    <form role="form" class="clearfix">
+                    <form role="form" class="clearfix" action="../hiking-site/salt.php" method="post">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
+                                    <label for="username" class="sr-only">Full Name</label>
+                                    <input type="text" class="form-control input-lg" id="name" name="name" placeholder="Your Name">
+                                </div><!--form-group-->
+                            </div><!-- col-sm-6 -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
                                     <label for="username" class="sr-only">Username</label>
-                                    <input type="text" class="form-control input-lg" id="username" placeholder="Username">
+                                    <input type="text" class="form-control input-lg" id="username" name="username" placeholder="Your Username">
                                 </div><!--form-group-->
                             </div><!-- col-sm-6 -->
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="password" class="sr-only">Password</label>
-                                    <input type="email" class="form-control input-lg" id="password" placeholder="Password">
+                                    <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Your Password">
                                 </div><!--form-group-->
                             </div><!-- col-sm-6 -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="username" class="sr-only"></label>
+                                    <input type="email" class="form-control input-lg" id="email" name="email" placeholder="Your Email">
+                                </div><!--form-group-->
+                            </div>
                         </div><!-- row -->
                         <input type="submit" class="btn btn-info btn-lg pull-right" value="Create account &raquo;">
                     </form>
