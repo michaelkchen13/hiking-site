@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98dba3de-033e-453a-a153-f4822aa6be04" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/hiking-site.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/base.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/location-info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/login-test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blog.html" afterPath="$PROJECT_DIR$/views/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.html" afterPath="$PROJECT_DIR$/views/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.html" afterPath="$PROJECT_DIR$/views/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main-content.html" afterPath="$PROJECT_DIR$/views/main-content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main.html" afterPath="$PROJECT_DIR$/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/posts.html" afterPath="$PROJECT_DIR$/views/posts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/resources.html" afterPath="$PROJECT_DIR$/views/resources.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/base.html.twig" afterPath="$PROJECT_DIR$/views/base.html.twig" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -98,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -106,6 +87,16 @@
               <folding>
                 <marker date="1500904752000" expanded="true" signature="1174:1249" ph="SELECT salt,... user" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="76" lean-forward="false" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,7 +147,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/views/main-content.html" />
-        <option value="$PROJECT_DIR$/views/base.html.twig" />
         <option value="$PROJECT_DIR$/views/test.html" />
         <option value="$PROJECT_DIR$/views/login.html" />
         <option value="$PROJECT_DIR$/views/posts.html" />
@@ -172,6 +162,7 @@
         <option value="$PROJECT_DIR$/views/location-info.html" />
         <option value="$PROJECT_DIR$/salt.php" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -343,12 +334,12 @@
       <workItem from="1500471818951" duration="13922000" />
       <workItem from="1500559670643" duration="9916000" />
       <workItem from="1500646233144" duration="2692000" />
-      <workItem from="1500903285176" duration="603000" />
+      <workItem from="1500903285176" duration="741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31382000" />
+    <option name="totallyTimeSpent" value="31520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -635,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="true" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -785,6 +769,14 @@
           <folding>
             <marker date="1500904752000" expanded="true" signature="1174:1249" ph="SELECT salt,... user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="76" lean-forward="false" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
