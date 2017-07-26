@@ -1,4 +1,21 @@
 <!--VIDEO FEAT-->
+<img src="views/assets/img/wood3.jpg" style="width: 100%; height: 143%; position: absolute;">
+
+
+    {{ include('dropdown-menu.html') }}
+
+    <!-- perhaps make use of twig for repetitive elements!-->
+
+    <div id="chart_div" style="width: 63.35%; height: 400px; margin-left: 19.1%;"></div>
+
+    {% for item in map_info %}
+      <div id="{{ item.id }}" style="width: 63.35%; height: 400px; display: none; margin-left: 19.1%; margin-top: 2%;"></div>
+    {% endfor %}
+
+</div>
+</div><!--  wrapper !-->
+</div><!-- background -->
+
 <script>
  // Geocharts begin here...
       google.charts.load('current', {'packages': ['geochart']});
@@ -254,29 +271,3 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_eM_Ol1NBaP_NBYRSwivwqQhldQIHZ5Q
 &libraries=visualization"></script>
-    {{ include('dropdown-menu.html') }}
-    <break />
-    <break />
-
-    <!-- perhaps make use of twig for repetitive elements!-->
-
-    <div id="page-content-wrapper">
-            <div class="container">
-                <div id="chart_div" style="width: 900px; height: 400px;"></div>
-            </div> <!-- container -->
-
-    </div>
-
-    {% for item in map_info %}
-      <div id="page-content-wrapper">
-            <div class="container">
-                <div id="{{ item.id }}" style="width: 900px; height: 400px; display: none;"></div>
-            </div> <!-- container -->
-     </div>
-    {% endfor %}
-
-        <break />
-        <break />
-
-</div><!--  wrapper !-->
-</div>
