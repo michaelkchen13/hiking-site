@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'vendor/autoload.php'; //you can do it - use the force!!
+require_once 'vendor/autoload.php';
 
 // routing..
 $page = 'home';
@@ -18,6 +18,13 @@ $twig = new Twig_Environment($loader, [
     'cache' => false
 ]);
 
+$function = new Twig_SimpleFunction('getLocInfo', function ($arr, $url) {
+    $response = Unirest\Request::get($url, $arr);
+    var_dump($response);
+    return;
+});
+$twig->addFunction($function);
+
 $md5Filter = new Twig_SimpleFilter('md5', function($string) {
     return md5($string);
 });
@@ -30,17 +37,6 @@ $lexer = new Twig_Lexer($twig, array(
 ));
 
 $twig->setLexer($lexer);
-
-/* echo $twig->render('hello.html', array(
-        'name' => 'Michael',
-        'age' => 10,
-
-        'users' => array(
-            array('name' => 'Max', 'age' => 18),
-            array('name' => 'James', 'age' => 22),
-            array('name' => 'Max', 'age' => 34)
-            )
-    ));  */
 
 /* routing */
 if ($page === 'login'){
@@ -72,8 +68,8 @@ if ($page === 'login'){
 } else if($page === 'create_account') {
     echo $twig->render('createaccount.html');
 } else if($page === 'loc-info') {
-    echo $twig->render('location-info.html', array(
-        'default-location' => 'Appalachain Trail'
+    echo $twig->render('location-info.php', array(
+        'default-location' => 'Appalachian Trail'
     ));
 }
 else

@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Hiking Sites</title>
+    <title>Hiking Site Locations Info</title>
 
     <!-- Bootstrap -->
     <!-- Bootstrap Core CSS-->
-    <!--link href="views/assets/css/custom.css" rel="stylesheet"-->
+    <link href="views/assets/css/custom.css" rel="stylesheet">
     <link href="views/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FontAwesome Icons-->
@@ -25,7 +25,27 @@
 </head>
 <body>
     {{ include('header.html') }}
-    {{ include('login-test.html') }}
+
+    <div id="page-content-wrapper">
+        <div class="container">
+            <div id="info" style="width: 900px; height: 400px;">
+
+                {% set arr = {"X-Mashape-Key" : "2DKorc206ImshrwHFboBUJeyCw2qp1qrVFIjsnsbLRcwF0pNb4",
+                "Accept" : "text/plain"} %}
+                {% set url = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking&q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25" %}
+                {{ query|upper }}
+
+                {{ getLocInfo(arr,url) }}
+
+            </div>
+
+        </div> <!-- container -->
+
+    </div>
+
+
     {{ include('footer.html') }}
+
+
 </body>
 </html>
