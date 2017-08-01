@@ -26,16 +26,36 @@
 <body>
     {{ include('header.html') }}
 
+    <div class="container">
+        <h2>Vertical (basic) form</h2>
+        <form>
+            <div class="form-group">
+                <label for="loc">Location:</label>
+                <input type="text" class="form-control" id="loc" placeholder="Enter location" name="loc">
+            </div>
+            <div class="form-group">
+                <label for="pwd">State:</label>
+                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
     <div id="page-content-wrapper">
         <div class="container">
             <div id="info" style="width: 900px; height: 400px;">
 
                 {% set arr = {"X-Mashape-Key" : "2DKorc206ImshrwHFboBUJeyCw2qp1qrVFIjsnsbLRcwF0pNb4",
-                "Accept" : "text/plain"} %}
+                "Accept" : "text/plain"} %} <!-- text/plain or application/json? -->
                 {% set url = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking&q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25" %}
-                {{ query|upper }}
 
-                {{ getLocInfo(arr,url) }}
+                <!--{{ getLocInfo(arr,url) }}-->
+                {% set response = getLocInfo(arr,url) %}
+                {{ response }}
+
 
             </div>
 

@@ -15,12 +15,23 @@ if  (isset($_GET['p'])){
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/views');
 $twig = new Twig_Environment($loader, [
-    'cache' => false
+    'cache' => __DIR__ . '/tmp'
 ]);
 
 $function = new Twig_SimpleFunction('getLocInfo', function ($arr, $url) {
     $response = Unirest\Request::get($url, $arr);
-    var_dump($response);
+    $data = json_decode($response->raw_body);
+    var_dump($data->places);
+    foreach ($data->places as $place){
+        if (isset($place->name)) {
+            echo '<div> Name: ' . $place->name . '</div>';
+        }
+        if (isset($place->description)){
+            echo '<div> description: ' . $place->description . '</div>';
+        }
+        //echo '<div>' .$place->description . '</div>';
+
+    }
     return;
 });
 $twig->addFunction($function);
