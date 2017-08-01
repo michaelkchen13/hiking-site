@@ -398,6 +398,7 @@ body{
 	font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
 	font-size: 16px;
 	background: url('../img/.jpg') no-repeat center center;
+	background-color: whitesmoke;
     overflow-x: hidden;
     background-size: cover;  
     -webkit-background-size: cover;
@@ -414,6 +415,9 @@ body{
     -o-background-size: cover;
 }
 
+a {
+    color: rgb(10, 97, 152);
+}
 
 /*
 background-color: #2e2800;
@@ -984,6 +988,7 @@ footer li.signup-link a:hover {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+	padding: inherit;
 }
 
 .post header,
@@ -1303,6 +1308,16 @@ button[type="submit"]:hover {
     	margin-right: 0px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+	footer {
+		 position: absolute;
+		 right: 0;
+		 bottom: -275%;
+		 left: 0;
+		 padding: 1rem;
+		 text-align: center;
+	}
 
 
 

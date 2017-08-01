@@ -203,6 +203,11 @@ blockquote:before {
 	width: 20%;
 }
 
+.list-group {
+    margin-right: 45px;
+    margin-left: 0px;
+}
+
 
 /* === Maps === */
 .map {
@@ -824,9 +829,13 @@ button[type="submit"]:hover {
 	background: #aaa;
 }
 
+    .navbar-toggle {
+    	display: none;
+    }
+
 /* === MEDIA QUERIES === */
 
-@media screen and ( max-width : 991px ){
+/*@media screen and ( max-width : 991px ){
 	#instructor .container{
 		background: rgba(255,255,255,0.8);
 		padding: 20px;
@@ -869,7 +878,7 @@ button[type="submit"]:hover {
 		margin-right: 0;
 		min-height: 0;
 	}
-}
+}*/
 
 @media(min-width:768px) {
     #wrapper {
@@ -907,5 +916,19 @@ button[type="submit"]:hover {
     }
 }
 
+@media only screen and (max-width: 768px) {
+	footer {
+		 position: absolute;
+		 right: 0;
+		 bottom: -90%;
+		 left: 0;
+		 padding: 1rem;
+		 text-align: center;
+	}
+}
 
-
+@media (min-width: 768px){
+	.col-sm-12 {
+		margin-left: -100%;
+	}
+}
