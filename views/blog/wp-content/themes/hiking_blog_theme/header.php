@@ -79,7 +79,7 @@
                         <a href="#menu-toggle" class="btn btn-default, fa fa-bars fa-2x" aria-hidden="true" id="menu-toggle"></a>
                     </div><!-- navbar-header -->
                     <div class="logo">
-                    <a class="navbar-brand" href="main.html"><img src="img/logo.png" alt="Hiking Site"></a>
+                    <a class="navbar-brand" href="http://localhost:8888/"><img src="img/logo.png" alt="Hiking Site"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -101,22 +101,22 @@
 
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">
-                            <a href="index.html">Hiking Site</a>
+                            <a href="http://localhost:8888/">Hiking Site</a>
                         </li>
                         <li>
-                            <a href="plantrip.html">Plan Trip</a>
+                            <a href="http://localhost:8888/?p=plantrip">Plan Trip</a>
                         </li>
                         <li>
-                            <a href="history.html">History</a>
+                            <a href="http://localhost:8888/?p=history">History</a>
                         </li>
                         <li>
-                            <a href="hikingadvice.html">Hiking Advice</a>
+                            <a href="http://localhost:8888/?p=advice">Hiking Advice</a>
                         </li>
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="http://localhost:8888/views/blog">Blog</a>
                         </li>
                         <li>
-                            <a href="views/createaccount.html">Create Account</a>
+                            <a href="http://localhost:8888/?p=create_account">Create Account</a>
                         </li>
                     </ul>
                 </div><!-- sidebar-wrapper -->
