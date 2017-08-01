@@ -2,7 +2,7 @@
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
 require_once 'vendor/autoload.php';
 
@@ -21,15 +21,19 @@ $twig = new Twig_Environment($loader, [
 $function = new Twig_SimpleFunction('getLocInfo', function ($arr, $url) {
     $response = Unirest\Request::get($url, $arr);
     $data = json_decode($response->raw_body);
-    var_dump($data->places);
+    //var_dump($data->places);
     foreach ($data->places as $place){
+        echo '<div class="container">';
         if (isset($place->name)) {
-            echo '<div> Name: ' . $place->name . '</div>';
+            echo  'Site Name: ' . $place->name ;
+        }
+        if (isset($place->thumbnail)){
+            echo '<img src='. $place->thumbnail . 'width="180" height="100">';
         }
         if (isset($place->description)){
-            echo '<div> description: ' . $place->description . '</div>';
+            echo '<div class="lead"> description: ' . $place->description . '</div>';
         }
-        //echo '<div>' .$place->description . '</div>';
+        echo '</div>';
 
     }
     return;
@@ -80,7 +84,9 @@ if ($page === 'login'){
     echo $twig->render('createaccount.html');
 } else if($page === 'loc-info') {
     echo $twig->render('location-info.php', array(
-        'default-location' => 'Appalachian Trail'
+        'default-location' => 'Appalachian Trail',
+        'lon' => $_POST['lon'],
+        'lat' => $_POST['lat']
     ));
 }
 else

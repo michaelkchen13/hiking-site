@@ -49,47 +49,43 @@ class __TwigTemplate_2019c678d4616ad7a723fe071bb1dad086f23c6cc0864f0adf09d995066
 
     <div class=\"container\">
         <h2>Vertical (basic) form</h2>
-        <form>
+        <form method=\"post\" action=\"\">
             <div class=\"form-group\">
-                <label for=\"loc\">Location:</label>
-                <input type=\"text\" class=\"form-control\" id=\"loc\" placeholder=\"Enter location\" name=\"loc\">
+                <label for=\"lat\">Latitude:</label>
+                <input type=\"text\" class=\"form-control\" id=\"lat\" placeholder=\"Enter latitude\" name=\"lat\">
             </div>
             <div class=\"form-group\">
-                <label for=\"pwd\">State:</label>
-                <input type=\"text\" class=\"form-control\" id=\"pwd\" placeholder=\"Enter password\" name=\"pwd\">
-            </div>
-            <div class=\"checkbox\">
-                <label><input type=\"checkbox\" name=\"remember\"> Remember me</label>
+                <label for=\"long\">Longitude:</label>
+                <input type=\"text\" class=\"form-control\" id=\"lon\" placeholder=\"Enter longitude\" name=\"lon\">
             </div>
             <button type=\"submit\" class=\"btn btn-default\">Submit</button>
         </form>
     </div>
 
     <div id=\"page-content-wrapper\">
-        <div class=\"container\">
-            <div id=\"info\" style=\"width: 900px; height: 400px;\">
+        <div class=\"container\" style=\"height: 2000px;\">
+            <div id=\"info\" style=\"width: 900px; \">
 
                 ";
-        // line 51
+        // line 48
         $context["arr"] = array("X-Mashape-Key" => "2DKorc206ImshrwHFboBUJeyCw2qp1qrVFIjsnsbLRcwF0pNb4", "Accept" => "text/plain");
+        // line 50
+        echo "                ";
+        $context["url"] = (((("https://trailapi-trailapi.p.mashape.com/?lat=" . ($context["lat"] ?? null)) . "&lon=") . ($context["lon"] ?? null)) . "&q[activities_activity_type_name_eq]=hiking");
+        // line 51
+        echo "                ";
+        $context["response"] = call_user_func_array($this->env->getFunction('getLocInfo')->getCallable(), array(($context["arr"] ?? null), ($context["url"] ?? null)));
         // line 52
-        echo " <!-- text/plain or application/json? -->
-                ";
-        // line 53
-        $context["url"] = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking&q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25";
-        // line 54
         echo "
                 <!--";
-        // line 55
-        echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('getLocInfo')->getCallable(), array(($context["arr"] ?? null), ($context["url"] ?? null))), "html", null, true);
-        echo "-->
-                ";
-        // line 56
-        $context["response"] = call_user_func_array($this->env->getFunction('getLocInfo')->getCallable(), array(($context["arr"] ?? null), ($context["url"] ?? null)));
-        // line 57
+        // line 53
+        $context["url"] = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking";
+        // line 54
         echo "                ";
-        echo twig_escape_filter($this->env, json_encode(($context["response"] ?? null)), "html", null, true);
-        echo "
+        $context["response"] = call_user_func_array($this->env->getFunction('getLocInfo')->getCallable(), array(($context["arr"] ?? null), ($context["url"] ?? null)));
+        echo "-->
+
+                <!-- deleted string: &q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25 -->
 
 
             </div>
@@ -100,7 +96,7 @@ class __TwigTemplate_2019c678d4616ad7a723fe071bb1dad086f23c6cc0864f0adf09d995066
 
 
     ";
-        // line 67
+        // line 66
         echo twig_include($this->env, $context, "footer.html");
         echo "
 
@@ -121,7 +117,7 @@ class __TwigTemplate_2019c678d4616ad7a723fe071bb1dad086f23c6cc0864f0adf09d995066
 
     public function getDebugInfo()
     {
-        return array (  104 => 67,  90 => 57,  88 => 56,  84 => 55,  81 => 54,  79 => 53,  76 => 52,  74 => 51,  47 => 27,  19 => 1,);
+        return array (  100 => 66,  84 => 54,  82 => 53,  79 => 52,  76 => 51,  73 => 50,  71 => 48,  47 => 27,  19 => 1,);
     }
 
     public function getSourceContext()

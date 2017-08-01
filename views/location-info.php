@@ -28,33 +28,32 @@
 
     <div class="container">
         <h2>Vertical (basic) form</h2>
-        <form>
+        <form method="post" action="">
             <div class="form-group">
-                <label for="loc">Location:</label>
-                <input type="text" class="form-control" id="loc" placeholder="Enter location" name="loc">
+                <label for="lat">Latitude:</label>
+                <input type="text" class="form-control" id="lat" placeholder="Enter latitude" name="lat">
             </div>
             <div class="form-group">
-                <label for="pwd">State:</label>
-                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
+                <label for="long">Longitude:</label>
+                <input type="text" class="form-control" id="lon" placeholder="Enter longitude" name="lon">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
 
     <div id="page-content-wrapper">
-        <div class="container">
-            <div id="info" style="width: 900px; height: 400px;">
+        <div class="container" style="height: 2000px;">
+            <div id="info" style="width: 900px; ">
 
                 {% set arr = {"X-Mashape-Key" : "2DKorc206ImshrwHFboBUJeyCw2qp1qrVFIjsnsbLRcwF0pNb4",
-                "Accept" : "text/plain"} %} <!-- text/plain or application/json? -->
-                {% set url = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking&q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25" %}
-
-                <!--{{ getLocInfo(arr,url) }}-->
+                "Accept" : "text/plain"} %}
+                {% set url = 'https://trailapi-trailapi.p.mashape.com/?lat=' ~ lat ~ '&lon=' ~ lon ~ '&q[activities_activity_type_name_eq]=hiking' %}
                 {% set response = getLocInfo(arr,url) %}
-                {{ response }}
+
+                <!--{% set url = "https://trailapi-trailapi.p.mashape.com/?lat=37.7&lon=-122.4&q[activities_activity_type_name_eq]=hiking" %}
+                {% set response = getLocInfo(arr,url) %}-->
+
+                <!-- deleted string: &q[city_cont]=San+Francisco&q[country_cont]=United+States&q[state_cont]=California&radius=25 -->
 
 
             </div>
