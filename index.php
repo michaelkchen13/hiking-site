@@ -63,12 +63,12 @@ if ($page === 'login'){
             array('id' => 'map_section_NW')
         )
     ));
-} else if ($page === 'posts'){
-    echo $twig->render('posts.html');
-} else if ($page === 'resources'){
-    echo $twig->render('resources.html');
-} else if ($page === 'blog') {
-    echo $twig->render('blog.html');
+} else if ($page === 'plantrip'){
+    echo $twig->render('plantrip.html');
+} else if ($page === 'history'){
+    echo $twig->render('history.html');
+} else if ($page === 'advice') {
+    echo $twig->render('advice.html');
 } else if($page === 'create_account') {
     echo $twig->render('createaccount.html');
 } else if($page === 'loc-info') {
