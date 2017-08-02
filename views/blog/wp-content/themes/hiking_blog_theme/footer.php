@@ -67,7 +67,7 @@
 
                                 <p class="tml-submit-wrap" style="text-align: right;">
                                     <input type="submit" name="wp-submit" id="wp-submit" value="Log In">
-                                    <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/wp-admin/">
+                                    <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/">
                                     <input type="hidden" name="instance" value="">
                                     <input type="hidden" name="action" value="login">
                                 </p>
