@@ -82,7 +82,7 @@ button, input, .btn, a.btn {
 }
 
 .btn {
-	font-weight: bold;
+
 }
 
 .btn-position {
@@ -100,7 +100,6 @@ button.btn:focus {
 }
 
 .btn-success {
-	background: #79b044;
 	border: none;
 }
 
@@ -435,7 +434,7 @@ section h3 {
 
 #primary {
 	padding-top: 40px;
-	padding-bottom: 180px;
+	padding-bottom: 80px;
 }
 
 .feature-image {
@@ -805,7 +804,7 @@ button[type="submit"] {
 	display: inline-block;
 	margin-bottom: 0;
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: 400;
 	line-height: 1.33;
 	text-align: center;
 	white-space: nowrap;
@@ -879,6 +878,33 @@ button[type="submit"]:hover {
 		min-height: 0;
 	}
 }*/
+
+/* Classes for links in the create account page */
+.tml-action-links {
+    display: inline-block;
+    list-style: none;
+    margin: 0.5em auto;
+    padding: 0;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-links {
+    display: inline-block;
+    list-style: none;
+    margin: 0.5em auto;
+    padding: 0;
+    text-align: center;
+}
+
+.resetpassword {
+	margin: -50px 130px 200px;
+	display: none;
+}
+
+
+
+
 
 @media(min-width:768px) {
     #wrapper {

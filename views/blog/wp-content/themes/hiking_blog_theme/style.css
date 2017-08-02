@@ -465,7 +465,7 @@ button, input, .btn, a.btn {
 }
 
 .btn {
-	font-weight: bold;
+	
 }
 
 .btn-position {
@@ -483,7 +483,6 @@ button.btn:focus {
 }
 
 .btn-success {
-	background: #79b044;
 	border: none;
 }
 
@@ -1202,7 +1201,7 @@ button[type="submit"] {
 	display: inline-block;
 	margin-bottom: 0;
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: 400;
 	line-height: 1.33;
 	text-align: center;
 	white-space: nowrap;
@@ -1318,6 +1317,3 @@ button[type="submit"]:hover {
 		 padding: 1rem;
 		 text-align: center;
 	}
-
-
-
