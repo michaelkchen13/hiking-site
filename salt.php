@@ -77,4 +77,6 @@ $mysqli->query($insert);
 echo "\ninsertion into database successful!";
 mysqli_close($link); //Closing the connection to the database
 
+/* redirect to one of the pages, where it indicates who's logged in, etc.*/
+
 ?>

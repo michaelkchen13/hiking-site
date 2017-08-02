@@ -26,7 +26,7 @@ TODO: Write history
 
 * **Michael Chen** - Web Developer
 
-* **Abinav Girish** - Web Developer
+* **Abhinav Girish** - Web Developer
 
 * **Kyle Seaton** - Senior Web Developer/Supervisor
 

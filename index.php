@@ -2,9 +2,9 @@
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
-require_once 'vendor/autoload.php'; //you can do it - use the force!!
+require_once 'vendor/autoload.php';
 
 // routing..
 $page = 'home';
@@ -15,8 +15,30 @@ if  (isset($_GET['p'])){
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/views');
 $twig = new Twig_Environment($loader, [
-    'cache' => false
+    'cache' => __DIR__ . '/tmp'
 ]);
+
+$function = new Twig_SimpleFunction('getLocInfo', function ($arr, $url) {
+    $response = Unirest\Request::get($url, $arr);
+    $data = json_decode($response->raw_body);
+    //var_dump($data->places);
+    foreach ($data->places as $place){
+        echo '<div class="container">';
+        if (isset($place->name)) {
+            echo  'Site Name: ' . $place->name ;
+        }
+        if (isset($place->thumbnail)){
+            echo '<img src='. $place->thumbnail . 'width="180" height="100">';
+        }
+        if (isset($place->description)){
+            echo '<div class="lead"> description: ' . $place->description . '</div>';
+        }
+        echo '</div>';
+
+    }
+    return;
+});
+$twig->addFunction($function);
 
 $md5Filter = new Twig_SimpleFilter('md5', function($string) {
     return md5($string);
@@ -30,17 +52,6 @@ $lexer = new Twig_Lexer($twig, array(
 ));
 
 $twig->setLexer($lexer);
-
-/* echo $twig->render('hello.html', array(
-        'name' => 'Michael',
-        'age' => 10,
-
-        'users' => array(
-            array('name' => 'Max', 'age' => 18),
-            array('name' => 'James', 'age' => 22),
-            array('name' => 'Max', 'age' => 34)
-            )
-    ));  */
 
 /* routing */
 if ($page === 'login'){
@@ -72,8 +83,10 @@ if ($page === 'login'){
 } else if($page === 'create_account') {
     echo $twig->render('createaccount.html');
 } else if($page === 'loc-info') {
-    echo $twig->render('location-info.html', array(
-        'default-location' => 'Appalachain Trail'
+    echo $twig->render('location-info.php', array(
+        'default-location' => 'Appalachian Trail',
+        'lon' => $_POST['lon'],
+        'lat' => $_POST['lat']
     ));
 }
 else
@@ -94,6 +107,5 @@ else
         )
     ));
 }
-
 
 ?>

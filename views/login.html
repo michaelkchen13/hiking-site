@@ -52,9 +52,9 @@
 					</div><!-- navbar-header -->
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="resources.html">Resources</a></li>
+							<li><a href="?p=main.html">Home</a></li>
+							<li><a href="?p=blog.html">Blog</a></li>
+							<li><a href="?p=resources.html">Resources</a></li>
 							<li class="active"><a href="login.html">Login</a></li>
 						</ul>
 				</div><!-- container -->
@@ -79,7 +79,7 @@
 					<p class="lead">{{ name }}</p>
 				</section><!-- main-content -->
 
-					<form role="form" class="clearfix" action="login.php">
+					<form role="form" class="clearfix" action="../hiking-site/login.php" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -91,7 +91,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password" class="sr-only">Password</label>
-									<input type="email" class="form-control input-lg" name="password" id="password" placeholder="Your password">
+									<input type="password" class="form-control input-lg" name="password" id="password" placeholder="Your password">
 								</div><!--form-group-->
 							</div><!-- col-sm-6 -->
 							</div><!-- col-sm-6 -->
