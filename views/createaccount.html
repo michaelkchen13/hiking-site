@@ -53,29 +53,73 @@
                     <p class="lead">Create your Hiking Locations account!</p>
                 </section><!-- main-content -->
 
-                    <form role="form" class="clearfix">
+                    <form name="registerform" id="registerform" action="/views/blog/register/" method="post">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="username" class="sr-only">Username</label>
-                                    <input type="text" class="form-control input-lg" id="username" placeholder="Username">
+                                    <label for="user_login" class="sr-only">Username</label>
+                                    <input type="text" class="form-control input-lg" id="username" placeholder="Username" name="user_login" id="user_login" value="" size="20">
                                 </div><!--form-group-->
                             </div><!-- col-sm-6 -->
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="password" class="sr-only">Password</label>
-                                    <input type="email" class="form-control input-lg" id="password" placeholder="Password">
+                                    <label for="user_email" class="sr-only">E-mail</label>
+                                    <input type="text" class="form-control input-lg" id="username" placeholder="E-mail" name="user_email" id="user_email" value="" size="20">
                                 </div><!--form-group-->
                             </div><!-- col-sm-6 -->
-                        </div><!-- row -->
-                        <input type="submit" class="btn btn-info btn-lg pull-right" value="Create account &raquo;">
-                    </form>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="pass1" class="sr-only">Password</label>
+                                    <input type="password" class="form-control input-lg" id="username" placeholder="Password" name="pass1" id="pass1" value="" size="20">
+                                </div><!--form-group-->
+                            </div><!-- col-sm-6 -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="pass2" class="sr-only">Confirm Password</label>
+                                    <input type="password" class="form-control input-lg" id="username" placeholder="Confirm Password" name="pass2" id="pass2" value="" size="20">
+                                </div><!--form-group-->
+                            </div><!-- col-sm-6 -->
 
+                            <p class="tml-registration-confirmation" id="reg_passmail"></p>
+                            <p class="tml-submit-wrap" style="text-align: right;">
+                            <input type="submit" name="wp-submit" id="wp-submit" value="Register" class="btn btn-success btn-sm">
+                            <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/?registration=complete">
+                            <input type="hidden" name="instance" value="">
+                            <input type="hidden" name="action" value="register">
+                            </p>
+                            </div><!-- row -->
+                            </form>
+                            <ul class="tml-action-links">
+                            <a href="" data-toggle="modal" data-target="#myModal" rel="nofollow">Log In</a>
+                            &emsp;
+                            </ul>
+                            &emsp;
+                            <ul class="action-links">
+                            <a href="http://localhost:8888/views/blog/lostpassword/" rel="nofollow">Lost Password</a>
+                            </ul>
                 </div><!-- content -->
             </div><!-- row -->
         </div><!-- container -->
 
 
+        <div class="resetpassword">
+        <div class="tml tml-lostpassword" id="theme-my-login">
+            <p class="message">Please enter your username or email address. You will receive a link to create a new password via email.</p>     <form name="lostpasswordform" id="lostpasswordform" action="/views/blog/lostpassword/" method="post">
+                <p class="tml-user-login-wrap">
+                    <label for="user_login">Username or E-mail:</label>
+                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20">
+                </p>
+
+                
+                <p class="tml-submit-wrap">
+                    <input type="submit" name="wp-submit" id="wp-submit" value="Get New Password">
+                    <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/login/?checkemail=confirm">
+                    <input type="hidden" name="instance" value="">
+                    <input type="hidden" name="action" value="lostpassword">
+                </p>
+            </form>
+        </div>
+    </div>
 
         <!-- BOOTSTRAP CORE JAVASCRIPT
              PLaced at the end of the document so the pages load faster!
@@ -87,6 +131,15 @@
         <!-- Bootstrap-select(dropdown menus JS) -->
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
         <script src="views/assets/js/bootstrap.min.js"></script>
+
+        <script>
+            $(".action-links").click(function(e) {
+                    e.preventDefault();
+                    console.log("???");
+                    $(".resetpassword").css({"display": "block"});
+                });
+        </script>
+
 
     {{ include('modal.html') }}
     {{ include('footer.html') }}
