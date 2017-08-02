@@ -27,7 +27,7 @@
     {{ include('header.html') }}
 
     <div class="container">
-        <h2>Vertical (basic) form</h2>
+        <h2>Information on Hiking Locations</h2>
         <form method="post" action="">
             <div class="form-group">
                 <label for="lat">Latitude:</label>
