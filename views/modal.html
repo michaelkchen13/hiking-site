@@ -1,34 +1,41 @@
 <!-- MODAL-->
-		<div class="modal fade" id="myModal">
-			<div class="modal-dialog">
-				<div class="modal-content">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-							<h4 class="modal-title" id="myModal:abel"><i class="fa fa-envelope"></i> Login</h4>
-					</div><!-- modal header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModal:abel"><i class="fa fa-envelope"></i> Login</h4>
+                    </div><!-- modal header -->
 
-					<div class="modal-body">
-						<p>Enter your Email and password.</p>
+                    <div class="modal-body">
+                        <br>
+                        <form class="form-inline" name="loginform" id="loginform" action="/views/blog/login/" method="post">
+                            <div class="form-group">
+                                <label class="sr-only" for="user_login">Username or E-mail</label>
+                                <input type="text" name="log" id="user_login" class="input" placeholder="username" value="" size="20">
+                            </div><!-- form-group -->
+                            <div class="form-group">
+                                <label class="sr-only" for="user_pass">Password</label>
+                                <input type="password" name="pwd" id="user_pass" class="input" placeholder="password" value="" size="20" autocomplete="off">
+                            </div><!-- form-group -->
 
-						<form class="form-inline" role="form">
-							<div class="form-group">
-								<label class="sr-only" for="login-name">Email</label>
-								<input type="text" class="form-control" id="login-name" placeholder="Email">
-							</div><!-- form-group -->
-							<div class="form-group">
-								<label class="sr-only" for="login-email">Password</label>
-								<input type="text" class="form-control" id="login-email" placeholder="Password">
-							</div><!-- form-group -->
+                            <input type="hidden" name="_wp_original_http_referer" value="http://localhost:8888/views/blog/login/">
+                            <div class="tml-rememberme-submit-wrap">
+                                <p class="tml-rememberme-wrap">
+                                    <input name="rememberme" type="checkbox" id="rememberme" value="forever">
+                                    Remember Me
+                                </p>
 
-							<input type="submit" class="btn btn-danger" value="Login">
-						</form>
-
-						<hr>
-
-						<p><small>Provide your email and password</small></p>
-					</div><!-- modal body -->
-
-				</div><!-- modal content -->
-			</div><!-- modal dialog -->
-		</div><!-- Modal -->
+                                <p class="tml-submit-wrap" style="text-align: right;">
+                                    <input type="submit" name="wp-submit" id="wp-submit" value="Log In">
+                                    <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/">
+                                    <input type="hidden" name="instance" value="">
+                                    <input type="hidden" name="action" value="login">
+                                </p>
+                            </div>
+                        </form>
+                    </div><!-- modal body -->
+                </div><!-- modal content -->
+            </div><!-- modal dialog -->
+        </div><!-- Modal -->

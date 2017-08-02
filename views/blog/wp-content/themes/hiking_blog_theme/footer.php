@@ -17,21 +17,21 @@
         <footer>
             <div class="container">
                 <div class="col-sm-3">
-                    <p><a href="/"><img src="img/logo.png" alt="Hiking Website"></a></p>
+                    <p><a href="http://localhost:8888/"><img src="img/logo.png" alt="Hiking Website"></a></p>
                 </div><!-- end col -->
                 <div class="col-sm-6">
                     <nav>
                         <ul class="list-unstyled list-inline">                  
-                            <li><a href="plantrip.html">Plan Trip</a></li>
-                            <li><a href="blog.html">History</a></li>
-                            <li><a href="hikingadvice.html">Hiking Advice</a></li>
-                            <li><a href="blog.html">Blog</a></li>                           
-                            <li class="signup-link"><a href="createaccount.html">Create Account</a></li>
+                            <li><a href="http://localhost:8888/?p=plantrip">Plan Trip</a></li>
+                            <li><a href="http://localhost:8888/?p=history">History</a></li>
+                            <li><a href="http://localhost:8888/?p=advice">Hiking Advice</a></li>
+                            <li><a href="http://localhost:8888/views/blog">Blog</a></li>                           
+                            <li class="signup-link"><a href="http://localhost:8888/?p=create_account">Create Account</a></li>
                         </ul>
                     </nav>
                 </div><!-- end col -->
                     <div class="col-sm-3">
-                        <p class="pull-right">&copy; 2017 Michael Chen</p>
+                        <p class="pull-right">&copy; 2017</p>
                     </div><!-- end col -->
             </div><!-- container -->
         </footer>
@@ -47,26 +47,33 @@
                     </div><!-- modal header -->
 
                     <div class="modal-body">
-                        <p>Enter your Email and password.</p>
-
-                        <form class="form-inline" role="form">
+                        <br>
+                        <form class="form-inline" name="loginform" id="loginform" action="/views/blog/login/" method="post">
                             <div class="form-group">
-                                <label class="sr-only" for="login-name">Email</label>
-                                <input type="text" class="form-control" id="login-name" placeholder="Email">
+                                <label class="sr-only" for="user_login">Username or E-mail</label>
+                                <input type="text" name="log" id="user_login" class="input" placeholder="username" value="" size="20">
                             </div><!-- form-group -->
                             <div class="form-group">
-                                <label class="sr-only" for="login-email">Password</label>
-                                <input type="text" class="form-control" id="login-email" placeholder="Password">
+                                <label class="sr-only" for="user_pass">Password</label>
+                                <input type="password" name="pwd" id="user_pass" class="input" placeholder="password" value="" size="20" autocomplete="off">
                             </div><!-- form-group -->
 
-                            <input type="submit" class="btn btn-danger" value="Login">
+                            <input type="hidden" name="_wp_original_http_referer" value="http://localhost:8888/views/blog/login/">
+                            <div class="tml-rememberme-submit-wrap">
+                                <p class="tml-rememberme-wrap">
+                                    <input name="rememberme" type="checkbox" id="rememberme" value="forever">
+                                    Remember Me
+                                </p>
+
+                                <p class="tml-submit-wrap" style="text-align: right;">
+                                    <input type="submit" name="wp-submit" id="wp-submit" value="Log In">
+                                    <input type="hidden" name="redirect_to" value="http://localhost:8888/views/blog/wp-admin/">
+                                    <input type="hidden" name="instance" value="">
+                                    <input type="hidden" name="action" value="login">
+                                </p>
+                            </div>
                         </form>
-
-                        <hr>
-
-                        <p><small>Provide your email and password</small></p>
                     </div><!-- modal body -->
-
                 </div><!-- modal content -->
             </div><!-- modal dialog -->
         </div><!-- Modal -->
